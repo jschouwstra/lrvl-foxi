@@ -18,6 +18,9 @@ Route::get('/', function () {
 		echo $user->name."<br/>";
 		
 	}
-
-
 });
+
+Route::get('menu', ['as' => 'menu', 'uses' => 'MenuController@getMenu']);
+
+Route::get('users', ['as' => 'users', 'uses' => 'UserController@show']);
+
