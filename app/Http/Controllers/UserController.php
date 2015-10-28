@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\User;
+use App\Dog;
 
 class UserController extends Controller
 {
@@ -24,12 +25,10 @@ class UserController extends Controller
      */
     public function show()
     {
-        $user = User::all();  
-        return view('users',['users' => $user]);  
-    }
+        $user = User::all(); 
+        $dog = Dog::all(); 
+        //$dog = Dog::find(3); 
 
-    // public function getDog(){
-    //     $dog = User::find(1)->dog;
-    //     return view('users',['dog' =>$dog]);
-    // }
+        return view('users',['users' => $user, 'dogs' => $dog]);          
+    }
 }

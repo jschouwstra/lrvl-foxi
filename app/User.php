@@ -39,6 +39,5 @@ class User extends Model implements AuthenticatableContract,
 
     public function dog(){
         return $this->hasOne('App\Dog');
-
     }
 }

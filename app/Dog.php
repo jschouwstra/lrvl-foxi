@@ -15,4 +15,8 @@ class Dog extends Model
     public function breed() {
     	return $this->belongsTo('App\Breed');
     }
+
+    public function shots() {
+    	return $this->belongsToMany('App\Shot');
+    }
 }
