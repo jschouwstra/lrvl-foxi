@@ -18,16 +18,19 @@ User|bijbehorende hond:</br>
 			</ul>
 			Ingeënt voor:
 			<ul>
-			@foreach($user->dog->shots as $shot)
-				@if($shot !== null)
-					<li>{{$shot->name}}</li>
-				@else
-					<li>Geen inenting</li>
-				@endif
+			@if(count($user->dog->shots))				
+				@foreach($user->dog->shots as $shot)
+						<li>{{$shot->name}}</li>			
+				@endforeach
+			@else
+				Geen inenting
+			@endif
 
-			@endforeach
+
 			</ul>
 		@endif
+		
+
 	@endforeach
 
 {{-- 	@foreach($dogs as $dog)
